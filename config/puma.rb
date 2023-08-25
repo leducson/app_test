@@ -11,9 +11,17 @@ threads threads_count, threads_count
 #
 port        ENV.fetch("PORT") { 3000 }
 
+app_dir = File.expand_path("../..", __FILE__)
+shared_dir = "#{app_dir}/shared"
+
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
+
+bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
+# stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
+pidfile "#{shared_dir}/tmp/pids/puma.pid"
+# state_path "#{shared_dir}/tmp/pids/puma.state"
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
