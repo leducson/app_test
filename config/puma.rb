@@ -16,7 +16,7 @@ shared_dir = "#{app_dir}/shared"
 
 # Specifies the `environment` that Puma will run in.
 #
-environment ENV.fetch("RAILS_ENV") { "development" }
+environment ENV.fetch("RAILS_ENV") { "production" }
 
 bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
 # stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
