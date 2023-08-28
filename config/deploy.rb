@@ -22,10 +22,10 @@ set :repo_url, "git@github.com:leducson/app_test.git"
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, "config/database.yml", 'config/master.key'
+append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
-# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor/bundle", ".bundle"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -42,9 +42,7 @@ set :pty, true
 # set :linked_files, %w(config/application.yml)
 # set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads)
 set :keep_releases, 5
-set :rbenv_type, :user
-set :rbenv_ruby, '2.5.9'
-set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
+set :rails_env, 'production'
 
 set :puma_rackup, -> {File.join(current_path, "config.ru")}
 # set :puma_state, -> {"#{shared_path}/tmp/pids/puma.state"}
@@ -60,3 +58,4 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
+set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
