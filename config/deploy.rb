@@ -1,4 +1,5 @@
 # config valid for current version and patch releases of Capistrano
+set :default_shell, '/bin/bash -l'
 lock "~> 3.17.3"
 
 set :application, "app_test"
@@ -43,7 +44,7 @@ set :pty, true
 set :keep_releases, 5
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.9'
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
 
 set :puma_rackup, -> {File.join(current_path, "config.ru")}
 # set :puma_state, -> {"#{shared_path}/tmp/pids/puma.state"}
