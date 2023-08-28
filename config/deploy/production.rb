@@ -6,7 +6,7 @@ set :stage, :production
 set :rails_env, :production
 set :deploy_to, "/var/www/app_test"
 set :branch, :master
-server "54.198.14.193", user: "deploy", roles: %w{app db web}
+server "3.81.12.205", user: "deploy", roles: %w{app db web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
