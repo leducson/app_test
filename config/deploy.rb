@@ -43,7 +43,7 @@ set :pty, true
 set :keep_releases, 5
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.9'
-set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
 set :puma_rackup, -> {File.join(current_path, "config.ru")}
 # set :puma_state, -> {"#{shared_path}/tmp/pids/puma.state"}
